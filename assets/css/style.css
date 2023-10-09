@@ -198,7 +198,7 @@ body {
 }
 
 /*-----------------------------------*\
-  #REUSED STYLE
+  #REUSED STYLE//
 \*-----------------------------------*/
 
 .container {
@@ -628,12 +628,13 @@ article.container::before{
 
 .badge{
   position: absolute;
-  top: 8px;
-  right: 12px;
-  padding: 2px 8px;
+  top: 7px;
+  right: 9px;
+  padding: 1px 4px;
   border-radius: var(--radius-pill);
-  font-weight: var(--weight-semiBold);
-  cursor: help;
+  font-weight: 50%;
+  cursor: help
+  word-spacing: 50px;
 }
 
 .badge.aqi-1 {
@@ -681,6 +682,20 @@ article.container::before{
 /*-----------------------------------*\
   #FORECAST
 \*-----------------------------------*/
+
+.slider-container {
+  overflow-x: auto;
+  margin-inline: -16px;
+}
+
+.slider-container::-webkit-scrollbar { display: none; }
+
+.slider-list {
+  display: flex;
+  gap: 12px;
+}
+
+
 
 
 
