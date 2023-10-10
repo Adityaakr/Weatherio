@@ -8,7 +8,7 @@
 
 
 body {
-    background:  url(https://th.bing.com/th/id/OIP.FcB86MEVYdw_DD9m15L-0wHaQB?pid=ImgDet&rs=1);
+    background: black;
     font-family: 'Poppins', sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
@@ -107,7 +107,7 @@ img {
   height: auto
 }
 
-input, 
+input,
 button {
   background: none;
   border: none;
@@ -279,7 +279,7 @@ body {
 .btn.primary[disabled]::before { display: none; }
 
 .card-card-lg {
-  background-color: #378f85;
+  background-color: var(--black-alpha-10);
   color: 20px;
   width: 350px;
   height: auto;
@@ -393,7 +393,7 @@ body {
   border-block-start-color: transparent;
   border-radius: var(--radius-circle);
   animation: loading 500ms linear infinite;
-   display: none; 
+   display: none;
 }
 
 @keyframes loading {
@@ -490,6 +490,7 @@ article.container::before{
   content: "";
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 40px;
   background-image: var(--gradient-1);
@@ -532,7 +533,7 @@ article.container::before{
   margin-block-end: 12px;
 }
 
-.current-weather-card .meta-text { 
+.current-weather-card .meta-text {
   color: lightsteelblue;
 }
 
@@ -573,7 +574,7 @@ article.container::before{
 
 
 /*-----------------------------------*\
-  #HOURLY FORECAST
+  #HOURLY FORECAST <div class="card card-sm highlight-card one">
 \*-----------------------------------*/
 .card-sm .title-3{
   margin-top: 10px;
@@ -583,7 +584,7 @@ article.container::before{
   font-size: 3.2rem;
 }
 
-.highlights-list { 
+.highlights-list {
   display: grid;
   gap: 20px;
 }
@@ -596,6 +597,7 @@ article.container::before{
 .highlights .card-sm {
   background-color: var(--black-alpha-10);
   position: relative;
+
 }
 
 .highlight-card :is(.wrapper, .card-list, .card-item, .label-1) {
@@ -626,16 +628,24 @@ article.container::before{
   gap: 8px;
 }
 
-.badge{
+.badge {
   position: absolute;
   top: 7px;
   right: 9px;
-  padding: 1px 4px;
+  padding-bottom: 9px;
+  padding:5px;
   border-radius: var(--radius-pill);
-  font-weight: 50%;
-  cursor: help
-  word-spacing: 50px;
+  font-size: 18px;
+  /* Adjust the font size as needed */
+  font-weight: normal;
+  cursor: help;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
 }
+
 
 .badge.aqi-1 {
   background-color: var(--bg-aqi-1);
@@ -679,39 +689,83 @@ article.container::before{
 }
 
 .highlight-card.two .label-1{ margin-block-end: 4px;}
+
 /*-----------------------------------*\
   #FORECAST
 \*-----------------------------------*/
 
 .slider-container {
-  overflow-x: auto;
+  overflow: auto;
+  font-size: 2px; /* Adjust the font size as needed */
   margin-inline: -16px;
+  padding-left: 18px;
+  max-height: 300px; /* Define a maximum height for the container */
+  padding: 16px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding doesn't affect the container's size */
 }
+.card-1 .body-3{
+  font-size: 18px;
+}
+
+.card-1 {
+  background-color: var(--black-alpha-10);
+  position: relative;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 
 .slider-container::-webkit-scrollbar { display: none; }
 
 .slider-list {
   display: flex;
+  font-size: 10px;
   gap: 12px;
+  width: auto;
+  height: auto;
+  margin: 2pc 8px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+.slider-list:first-child { margin-block-end: 16px;}
+
+
+.slider-list ::before
+.slider-list::after {
+  content: "";
+  min-width: 4px;
+}
+
+.slider.item {
+  min-width: 110px;
+  flex: 1 1 100%;
+  font-size: 10px;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+.slider-card { text-align: center;}
+
+.slider-item .weather-icon {
+  margin-inline: auto;
+  margin-block: 12px;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+
 }
 
 
 
-
-
-
-
-/*-----------------------------------*\
-  #LOADING
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #ERROR SECTION
-\*-----------------------------------*/
 
 
 
@@ -720,11 +774,220 @@ article.container::before{
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+.footer .body-3{
+  font-size: 12px;
+}
 
+.footer,
+.footer .body-3:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  color: var(--on-surface-variant);
+  text-align: center;
+  gap: 12px 24px;
+  margin-block-start: 28px;
+  display: non;
+}
+
+.fade-in .footer {display: flex;}
+
+.footer .body-3:last-child { gap: 6px;}
+
+/*-----------------------------------*\
+ #LOADING
+\*-----------------------------------*/
+
+.loading{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  display: none;
+}
+
+.loading::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--on-background);
+  border-block-start-color: transparent;
+  border-radius: var(--radius-circle);
+  animation: loading 500ms linear infinite ;
+}
 
 
 
 
 /*-----------------------------------*\
-  #MEDIA QUERIES
+  #ERROR SECTION
 \*-----------------------------------*/
+
+.error-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+  display: none ;
+}
+
+.btn-primary {
+  background-color: lightseagreen;
+  border-radius: var(--radius-pill);
+  padding: 8px 10px; /* Adjust the padding as needed */
+  width: auto;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  text-align: center; /* Center the text horizontally */
+  color: black;
+}
+
+.error-content .btn-primary { margin-block-start: 20px;}
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+
+  //responsive for desktop
+\*-----------------------------------*/
+
+@media (min-width: 768px) {
+  container {
+    padding: 400px;
+
+  }
+
+  .title-1 {
+    --title-1: 2.4rem;
+  }
+
+  .section > .title-1 .title-3{ margin-block-end: 16px;}
+
+  .card-lg { padding: 24px;}
+
+  .card-sm .card-1{
+    padding: 20px;
+    display: grid;
+    grid-template-rows: min-content  1fr;
+    }
+
+    .badge{
+      top: 0px;
+      right: 10px;
+
+    }
+  /* 
+    HEADER
+  */
+
+  .header-actions {
+    gap: 24px;
+
+  }
+
+  .header .btn-primary{ padding-inline: 16px 24px;}
+
+  .header .btn-primary .span { display: block;}
+
+  .search-view { clip-path: circle(3% at calc (100%-273px) 6%); }
+
+  /* 
+      MAIN
+  */
+
+  main {
+    height: calc(100vh - 96px);
+    height: calc(100svh - 96px);
+  }
+
+  article.container{
+    padding-block-start: 0;
+    grid-template-columns: 350px minmax(0 ,1fr);
+    align-items: flex-start;
+    gap: 24px;
+    display: flex;
+    display: grid;
+  }
+ 
+
+  .content-left {
+    position: sticky;
+    top: 0;
+  }
+
+  .section:not(:last-child) { margin-block: 20px;}
+
+  .forecast-card .card-item:not(:last-child){
+    margin-block-end: 16px;
+  }
+
+  .highlights-list{ 
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  
+  }
+ 
+
+  .highlight-card:nth-child(-n+2){
+    grid-column: span 500;
+    height: 160px;
+  }
+
+  .highlight-card:nth-child(n+3) {
+    height: 120px;
+  }
+
+  .highlights .m-icon { font-size: 3.6rem;}
+
+  .highlight-card.one .card-item {
+    width: 25%;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .slider-container{
+    margin-inline: 0 -24px;
+    border-bottom-left-radius: var(--radius-16);
+    border-top-left-radius: var(--radius-16);
+  }
+
+  .slider-list::before { display: none;}
+
+  .slider-list::after { min-width: 12px;}
+
+  .hourly-forecast .card-sm .card-1{ padding: 16px;}
+
+
+
+  
+}
+/* article.container{
+    padding-block-start: 0;
+    grid-template-columns: 280px min minmax(0 , 1fr);
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .content-left{
+    position: sticky;
+    top: 0;
+  } */
