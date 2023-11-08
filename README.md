@@ -26,13 +26,13 @@ Insert gif or link to demo
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  https://github.com/Adityaakr/Weatherio-app.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Weatherio-app
 ```
 
 Open with VSCode
