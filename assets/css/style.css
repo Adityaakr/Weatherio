@@ -980,14 +980,5 @@ article.container::before{
 
   
 }
-/* article.container{
-    padding-block-start: 0;
-    grid-template-columns: 280px min minmax(0 , 1fr);
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .content-left{
-    position: sticky;
-    top: 0;
-  } */
+@media (min-width: 1200px) {
+}
